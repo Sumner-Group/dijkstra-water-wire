@@ -12,7 +12,5 @@ other or of the donor or acceptor.
 Anticipated code updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
 2) The code can do pdb *or* mdcrd. Make one code that can do both given user input.
-============================
-Anticipated file updates
-1) Example pdb/mdcrd
-2) example outputs
+3) Example pdb/mdcrd
+4) example outputs
