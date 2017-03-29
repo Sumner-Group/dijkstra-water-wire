@@ -113,6 +113,7 @@ void dijkstra(int src , int V, int *graph, int numat[])
 
 double distance (double xi, double xf, double yi, double yf,double zi,double zf)
 { 
+ // Function to calculate distance
   double d,dummy1,dummy2,dummy3,dummy4;
   dummy1= (xf-xi)*(xf-xi);
   dummy2=(yf-yi)*(yf-yi);
@@ -126,7 +127,7 @@ double distance (double xi, double xf, double yi, double yf,double zi,double zf)
 // driver program to test above function
 int main()
 {
-	/* Let us create the example graph discussed above */
+	/* Heavily edited by I. Sumner for water wire problem*/
 	  string name1,name2,name3,name4;
 	  int * numat, numres, natoms, * graph, nstart,nfinish1,nfinish2,numatdum[3],iline,nwater;
 	  double * x,* y,* z,dum1,dum2,dist1,dist2,dist3,cutoff,xdum[3],ydum[3],zdum[3];
@@ -152,10 +153,9 @@ int main()
   else{
     numlines =  int(3*natoms/10.0);
   }
-  //read in two endpoints for pathways
+  //read in endpoints for pathways
   cin >> nstart;
   cin >> nfinish1;
-  cin >> nfinish2;
   cin >> nwater;
   cin >> cutoff;
   //  cout << "numlines " << numlines << "\n";
@@ -167,24 +167,18 @@ int main()
       if( i+1 != numlines  ){
 	istringstream ss(line);
 	ss >> x[i*10] >> x[i*10+1] >> x[i*10+2] >> x[i*10+3] >> x[i*10+4] >> x[i*10+5] >> x[i*10+6] >> x[i*10+7] >> x[i*10+8] >> x[i*10+9];
-	//	cout << i  << x[i*10] << "\n";
 	i++;
       }
       else if(i+1 == numlines){
-	//	cout << "HERE " << i << "\n";
 	iline++;
 	istringstream ss(line);
 	int j = 0;
 	for(j=0;j<nat;j++){
 	  ss>>x[i*10+j];
-	  //	  cout << (3*natoms)%10 << " " << x[i*10+j] << " " << (3*natoms)%10 << "\n";
 	}	
 	xdum[1]=x[(nfinish1-1)*3];
 	ydum[1]=x[(nfinish1-1)*3+1];
 	zdum[1]=x[(nfinish1-1)*3+2];
-	xdum[2]=x[(nfinish2-1)*3];
-	ydum[2]=x[(nfinish2-1)*3+1];
-	zdum[2]=x[(nfinish2-1)*3+2];
 	xdum[0]=x[(nstart-1)*3];
 	ydum[0]=x[(nstart-1)*3+1];
 	zdum[0]=x[(nstart-1)*3+2];
@@ -193,7 +187,6 @@ int main()
 	  y[3+j]=x[(nwater-1)*3+j*9+1];
 	  z[3+j]=x[(nwater-1)*3+j*9+2];
 	  numat[3+j]=(nwater-1)+j*3+1;
-	  //	  cout << "WATERS " << x[3+j] << " " << y[3+j] << " " << z[3+j] << " " << (nwater-1)*3+j*3+1 << " " << numat[3+j] << " " << x[(nwater-1)*3+1] << "\n";
 	}
 	x[0]=xdum[0];
 	y[0]=ydum[0];
@@ -201,12 +194,8 @@ int main()
 	x[1]=xdum[1];
 	y[1]=ydum[1];
 	z[1]=zdum[1];
-	x[2]=xdum[2];
-	y[2]=ydum[2];
-	z[2]=zdum[2];
 	numat[0]=nstart;
 	numat[1]=nfinish1;
-	numat[2]=nfinish2;
 	i++;
 	natoms=noxygens+3;
 	j =0;
@@ -214,8 +203,7 @@ int main()
 	  for(i=0;i<natoms;i++){
 	    dist1=distance(x[0],x[i],y[0],y[i],z[0],z[i]);
 	    dist2=distance(x[1],x[i],y[1],y[i],z[1],z[i]);
-	    dist3=distance(x[2],x[i],y[2],y[i],z[2],z[i]);
-	    if((dist1<15)||(dist2<15)||(dist3<15)){
+	    if((dist1<15)||(dist2<15)){
 	      x[j]=x[i];
 	      y[j]=y[i];
 	      z[j]=z[i];
@@ -224,29 +212,29 @@ int main()
 	    }
 	  }
 	//only viable pathways are those with water oxygens within cutoff
+	//If the distance is less than the cutoff, the distance is set to 1
+        //If the distance is greater than the cutoff, the distance is set to 1000
 	  natoms=j;
 	  graph = new int[natoms*natoms];
 	  cout << "geom " << iline << "\n";
-	  //diagonal
+	  //diagonal portion of distance graph
 	  for(i=0;i<natoms;i++){
 	    graph[i+i*natoms]=1;
 	  }
-	  
+	  //off diagonal 
 	  for(i=0;i<natoms;i++){
 	    for(j=0;j<i;j++){
 	      dist1=distance(x[j],x[i],y[j],y[i],z[j],z[i]);
 	      graph[i+j*natoms]=1;
 	      graph[j+i*natoms]=1;
-	      //	      cout << dist1 << "\n";
 	      if(dist1>cutoff){
 		graph[i+j*natoms]=1000;
 		graph[j+i*natoms]=1000;
 	      }
 	    }
 	  }
-	  //Make sure 2 endpoints aren't connected
-	  graph[1+2*natoms]=1000;
-	  graph[2+1*natoms]=1000;  
+       //  The code could be sped up greatly if only one of the off-diagonal blocks is considered
+       // This is a symmetric matrix
 	  dijkstra(0,natoms,graph,numat);
 	  getline(inputfile,line);
 	  i=0;
