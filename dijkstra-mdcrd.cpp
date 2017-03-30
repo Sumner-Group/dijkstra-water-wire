@@ -163,7 +163,7 @@ int main()
   getline(inputfile,line);
   while (getline(inputfile,line))
     {
-      //only read in lines with cartesian coordinates
+      //read in coordinates
       if( i+1 != numlines  ){
 	istringstream ss(line);
 	ss >> x[i*10] >> x[i*10+1] >> x[i*10+2] >> x[i*10+3] >> x[i*10+4] >> x[i*10+5] >> x[i*10+6] >> x[i*10+7] >> x[i*10+8] >> x[i*10+9];
@@ -182,12 +182,16 @@ int main()
 	xdum[0]=x[(nstart-1)*3];
 	ydum[0]=x[(nstart-1)*3+1];
 	zdum[0]=x[(nstart-1)*3+2];
+	//saving water oxygen coordinates. Assuming that the atom order for each water molecule is:
+	// oxygen, hydrogen, hydrogen
 	for(j=0;j<=noxygens;j++){
-	  x[3+j]=x[(nwater-1)*3+j*9];
-	  y[3+j]=x[(nwater-1)*3+j*9+1];
-	  z[3+j]=x[(nwater-1)*3+j*9+2];
-	  numat[3+j]=(nwater-1)+j*3+1;
+	  x[2+j]=x[(nwater-1)*3+j*9];
+	  y[2+j]=x[(nwater-1)*3+j*9+1];
+	  z[2+j]=x[(nwater-1)*3+j*9+2];
+	  //numat array stores the atom numbers of the donor, acceptor and water oxygens
+	  numat[2+j]=(nwater-1)+j*3+1;
 	}
+	//save donor and acceptor coordinates and atom numbers
 	x[0]=xdum[0];
 	y[0]=ydum[0];
 	z[0]=zdum[0];
@@ -197,7 +201,7 @@ int main()
 	numat[0]=nstart;
 	numat[1]=nfinish1;
 	i++;
-	natoms=noxygens+3;
+	natoms=noxygens+2;
 	j =0;
 	  //cut down on number of waters. Only consider waters within 15 ang of endpoints
 	  for(i=0;i<natoms;i++){
