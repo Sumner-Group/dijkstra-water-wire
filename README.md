@@ -9,7 +9,7 @@ or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters mus
 a user defined cutoff of each other
 other or of the donor or acceptor.
 
-Input file description:
+Input file description
 
 filetype (mdcrd/pdb)
 filename
