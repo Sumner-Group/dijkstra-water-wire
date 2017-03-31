@@ -24,4 +24,4 @@ distance cut-off
 Anticipated updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
 2) Example pdb/mdcrd
-3) example outputs
+3) example outputs 
