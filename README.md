@@ -8,7 +8,7 @@ Currently, only Amber MD has been tested and the code can use either a pdb traje
 or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters must be within 
 a user defined cutoff of each other
 other or of the donor or acceptor.
-=====================
+
 Input file description:
 
 filetype (mdcrd/pdb)
@@ -18,6 +18,8 @@ atom number for start of water chain
 atom number for end of water chain
 number of water molecules
 distance cut-off
+
+=====================
 
 Anticipated updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
