@@ -9,6 +9,16 @@ or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters mus
 a user defined cutoff of each other
 other or of the donor or acceptor.
 =====================
+Input file description:
+
+filetype (mdcrd/pdb)
+filename
+number of atoms
+atom number for start of water chain
+atom number for end of water chain
+number of water molecules
+distance cut-off
+
 Anticipated updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
 2) Example pdb/mdcrd
