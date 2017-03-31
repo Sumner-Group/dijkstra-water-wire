@@ -9,7 +9,7 @@ or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters mus
 a user defined cutoff of each other
 other or of the donor or acceptor.
 =====================
-Anticipated code updates:
+Anticipated updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
 2) Example pdb/mdcrd
 3) example outputs
