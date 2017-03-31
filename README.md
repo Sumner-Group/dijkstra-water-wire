@@ -11,7 +11,7 @@ other or of the donor or acceptor.
 
 Input file description
 
-filetype (mdcrd/pdb)\n
+filetype (mdcrd/pdb)
 filename
 number of atoms
 atom number for start of water chain
