@@ -19,9 +19,21 @@ atom number for end of water chain
 number of water molecules
 distance cut-off
 
+To compile the code
+
+g++ -O2 -o path.exe dijkstra-mdcrdpdb.cpp
+
+To run the code
+
+./path.exe < inputfile
+
+Sample inputs are given as input.pdb and input.mdcrd
+
+Sample outputs are given as output.pdb and output.mdcrd
+
+Sample mdcrd and pdb files are given as ub-nvt-step1-3.pdb and ub-nvt-step13.mdcrd. They each have thee geometries.
+
 =====================
 
 Anticipated updates:
 1) Allowing for angles. In other words, viability also has to do with the Donor-hydrogen-acceptor angle.
-2) Example pdb/mdcrd
-3) example outputs 
