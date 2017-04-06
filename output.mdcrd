@@ -1,9 +1,0 @@
-geom 1
-Vertex	 Distance	Path
-0 -> 1 		 16		0 28431 18327 16344 18243 28215 18549 28437 28761 28440 30567 28590 30327 30177 28809 28548 1915 
-geom 2
-Vertex	 Distance	Path
-0 -> 1 		 1000		0 1915 
-geom 3
-Vertex	 Distance	Path
-0 -> 1 		 1000		0 1915 
