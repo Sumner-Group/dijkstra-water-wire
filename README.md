@@ -11,12 +11,12 @@ other or of the donor or acceptor.
 
 Input file description
 
-filetype (mdcrd/pdb)
-filename
-number of atoms
-atom number for start of water chain
-atom number for end of water chain
-number of water molecules (**Only necessary for mdcrd file types**)
+filetype (mdcrd/pdb) 
+filename 
+number of atoms 
+atom number for start of water chain 
+atom number for end of water chain 
+number of water molecules (**Only necessary for mdcrd file types**) 
 distance cut-off
 
 To compile the code
