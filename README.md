@@ -16,7 +16,7 @@ filename
 number of atoms 
 atom number for start of water chain 
 atom number for end of water chain 
-number of water molecules (**Only necessary for mdcrd file types**) 
+number of water molecules 
 distance cut-off
 
 To compile the code
