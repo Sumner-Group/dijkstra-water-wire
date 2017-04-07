@@ -1,8 +1,7 @@
 // A C / C++ program for Dijkstra's single source shortest
-// path algorithm. The program is for adjacency matrix
-// representation of the graph.
-// taken from http://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/
-// Many of these subroutines were edited by I. Sumner for the water wire problem.
+// path algorithm. The program is 
+// based on http://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/
+// Many of these functions were edited by I. Sumner for the water wire problem.
 #include <stdio.h>
 #include <limits.h>
 #include <iostream>
