@@ -21,7 +21,7 @@ distance cut-off
 
 To compile the code
 
-g++ -O2 -o path.exe dijkstra-mdcrdpdb.cpp
+g++ -O2 -o path.exe water-wire.cpp
 
 To run the code
 
