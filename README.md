@@ -7,7 +7,7 @@ The code has been modified to calculate water wires connecting a donor and accep
 Currently, only Amber MD has been tested and the code can use either a pdb trajectory file 
 or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters must be within 
 a user defined cutoff of each other
-other or of the donor or acceptor.
+other or of the donor or acceptor. 
 
 Input file description
 
