@@ -29,7 +29,7 @@ Sample inputs are given as input.pdb and input.mdcrd
 
 Sample outputs are given as output.pdb and output.mdcrd
 
-Sample mdcrd and pdb files are given as ub-nvt-step1-3.pdb and ub-nvt-step13.mdcrd. They each have thee geometries.
+Sample mdcrd and pdb files are given as ub-nvt-step1-3.pdb and ub-nvt-step13.mdcrd. They each have three geometries.
 
 =====================
 
