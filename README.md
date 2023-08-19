@@ -40,4 +40,4 @@ Anticipated updates:
 ---
 Wilson, R. H.; Zamfir, S.; Sumner, I. “Molecular dynamics simulations reveal a new role for a conserved active site asparagine in a ubiquitin-conjugating enzyme” Journal of Molecular Graphics and Modelling, 2017, 76, 403-411. [doi:10.1016/j.jmgm.2017.07.006](https://doi.org/10.1016/j.jmgm.2017.07.006)
 
-[![DOI](https://zenodo.org/badge/86590973.svg)](https://zenodo.org/badge/10.5281/zenodo.495640/86590973)
+[![DOI](https://zenodo.org/badge/86590973.svg)](https://zenodo.org/badge/latestdoi/86590973)
