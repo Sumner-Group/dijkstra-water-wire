@@ -7,8 +7,8 @@ or an Amber ASCII trajectory file (mdcrd). For a path to be accepted, waters mus
 a user defined cutoff of each other
 other or of the donor or acceptor. 
 
-#
 **Input file description**
+#
 
 filetype (mdcrd/pdb)
 
@@ -23,12 +23,13 @@ atom number for end of water chain
 number of water molecules  (**Only for mdcrd files**)
 
 distance cut-off
+#
 
-To compile the code
+**To compile the code**
 
 g++ -O2 -o path.exe water-wire.cpp
 
-To run the code
+**To run the code**
 
 ./path.exe < inputfile
 
